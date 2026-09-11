@@ -31,7 +31,7 @@ def write_groups_information(groups: list[Group]) -> int:
     with open("groups.pickle", "wb") as file:
         for group in groups:
             pickle.dump(group, file)
-    
+
     if not groups:
         return 0
     return max(len(group.students) for group in groups)
@@ -72,4 +72,3 @@ def read_students_information() -> list[Student]:
     except FileNotFoundError:
         pass
     return students
-
